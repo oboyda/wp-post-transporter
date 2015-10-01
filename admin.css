@@ -1,0 +1,5 @@
+#wppt-actions-table .hidden { display: none; }
+#wppt-actions-table p { margin-top: 0; margin-bottom: 10px; }
+#wppt-preimport-form .username-source { display: inline-block; width: 200px; }
+#wppt-actions-table select { width: 240px; }
+#wppt-actions-table .method-info { width: 170px; }
