@@ -155,6 +155,12 @@ function wppt_export_attachments($export_data){
 	$content_urls = array();
 	if($export_data['posts_data']){
 		foreach($export_data['posts_data'] as $pid => $pdata){
+			$post_attachments = get_posts(array('post_type' => 'attachment', 'posts_per_page' => -1, 'post_parent' => $pid));
+			if($post_attachments){
+				foreach($post_attachments as $p_att){
+					$attachments_export_ids[] = $p_att->ID;
+				}
+			}
 			if($urls = wppt_extract_content_urls($pdata['post_content'], true)){
 				$content_urls[$pid] = $urls;
 			}
